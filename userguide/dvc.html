@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138982267-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-138982267-1');
+  </script>
+
+  <title>DVC for Model Tracking &mdash; The Conversational AI Playbook 4.3.1 documentation</title>
+  
+
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'4.3.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/custom.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Webex Teams Integration" href="../integrations/webex_teams.html" />
+    <link rel="prev" title="Dealing with Voice Inputs" href="voice.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The Conversational AI Playbook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.3.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/introduction_to_conversational_applications.html">Introduction to Conversational Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/approaches_for_building_conversational_applications.html">Different Approaches for Building Conversational Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/anatomy_of_a_conversational_ai_interaction.html">Anatomy of a Conversational AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/introducing_mindmeld.html">Introducing MindMeld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/key_concepts.html">Key Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Step-by-Step Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/00_overview.html">Building a Conversational Interface in 10 Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/01_select_the_right_use_case.html">Step 1: Select the Right Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/02_script_interactions.html">Step 2: Script Your Ideal Dialogue Interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/03_define_the_hierarchy.html">Step 3: Define the Domain, Intent, Entity, and Role Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/04_define_the_dialogue_handlers.html">Step 4: Define the Dialogue State Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/05_create_the_knowledge_base.html">Step 5: Create the Knowledge Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/06_generate_representative_training_data.html">Step 6: Generate Representative Training Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/07_train_the_natural_language_processing_classifiers.html">Step 7: Train the Natural Language Processing Classifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/08_configure_the_language_parser.html">Step 8: Configure the Language Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/09_optimize_question_answering_performance.html">Step 9: Optimize Question Answering Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/10_deploy_to_production.html">Step 10: Deploy Trained Models</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Blueprint Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/overview.html">MindMeld Blueprints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/food_ordering.html">Food Ordering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/video_discovery.html">Video Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/home_assistant.html">Home Assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/hr_assistant.html">HR Assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/banking.html">Banking Assistant</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Platform Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional_dependency.html">Managing Optional Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessor.html">Working with the Preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Working with the Natural Language Processor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="domain_classifier.html">Working with the Domain Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intent_classifier.html">Working with the Intent Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entity_recognizer.html">Working with the Entity Recognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lstm.html">Using LSTM for Entity Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role_classifier.html">Working with the Role Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entity_resolver.html">Working with the Entity Resolver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parser.html">Working with the Language Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_features.html">Working with User-Defined Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kb.html">Working with the Knowledge Base and Question Answerer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dm.html">Working with the Dialogue Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_annotator.html">Working with the Auto Annotator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_action.html">Working with Custom Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tokenizer.html">Working with the Tokenizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internationalization.html">Internationalization support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">Dealing with Voice Inputs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DVC for Model Tracking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#available-options-in-mindmeld">Available Options in Mindmeld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-home-assistant-blueprint">Example: Home Assistant Blueprint</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/webex_teams.html">Webex Teams Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/whatsapp.html">WhatsApp Integration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal/api_reference.html">API Reference</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MindMeld UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mindmeld_ui/mindmeld_ui.html">MindMeld UI</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Versions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../versions/changes.html">Recent Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions/history.html">Package History</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The Conversational AI Playbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>DVC for Model Tracking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/userguide/dvc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="dvc-for-model-tracking">
+<h1>DVC for Model Tracking<a class="headerlink" href="#dvc-for-model-tracking" title="Permalink to this headline">¶</a></h1>
+<p>We use Data Version Control, or DVC, in Mindmeld in order to track trained models in our applications. DVC is an
+open-source version control system for data science and machine learning projects that enables versioning of large
+files and directories in concert with Git without storing the data itself in Git.</p>
+<p>You can find more info about DVC in the <a class="reference external" href="https://dvc.org/doc">official documentation</a>.</p>
+<p>The functionality of the DVC command within Mindmeld is shown in the table below.</p>
+<div class="section" id="available-options-in-mindmeld">
+<h2>Available Options in Mindmeld<a class="headerlink" href="#available-options-in-mindmeld" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>--init</td>
+<td>Initializes DVC within a repository. Must be run before other options.</td>
+</tr>
+<tr class="row-odd"><td>--save</td>
+<td>Saves models using DVC. Run after model building finishes.</td>
+</tr>
+<tr class="row-even"><td>--checkout HASH</td>
+<td>Checks out the repo state and models corresponding to a git hash.
+The --save option must have been run before committing the hash for
+model checkout to work.</td>
+</tr>
+<tr class="row-odd"><td>--destroy</td>
+<td>Remove all files associated with DVC from a directory.
+Must be run in the directory that contains the .dvc folder</td>
+</tr>
+<tr class="row-even"><td>--help</td>
+<td>Show the available options and their descriptions.</td>
+</tr>
+</tbody>
+</table>
+<p>We will use the Home Assistant blueprint to demonstrate the various command options.</p>
+</div>
+<div class="section" id="example-home-assistant-blueprint">
+<h2>Example: Home Assistant Blueprint<a class="headerlink" href="#example-home-assistant-blueprint" title="Permalink to this headline">¶</a></h2>
+<p>Let's take a look at how model tracking works using the Home Assistant blueprint. Below we'll walk through each of
+the necessary steps starting from an empty directory.</p>
+<ol class="arabic simple">
+<li><strong>Download the Home Assistant blueprint.</strong></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mindmeld blueprint home_assistant</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><strong>Start a new Git repository and add Home Assistant files to Git.</strong></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git init</span>
+<span class="go">git add home_assistant/</span>
+<span class="go">git commit -m &quot;Added home_assistant blueprint&quot;</span>
+</pre></div>
+</div>
+<p>DVC requires a source code management (SCM) tool such as Git to operate.</p>
+<ol class="arabic simple" start="3">
+<li><strong>Initialize DVC in the directory.</strong></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m home_assistant dvc --init</span>
+</pre></div>
+</div>
+<p>This will create all the files necessary for DVC to operate.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch master</span>
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span>
+
+<span class="go">      new file:   .dvc/.gitignore</span>
+<span class="go">      new file:   .dvc/config</span>
+<span class="go">      new file:   .dvc/plots/confusion.json</span>
+<span class="go">      new file:   .dvc/plots/default.json</span>
+<span class="go">      new file:   .dvc/plots/scatter.json</span>
+<span class="go">      new file:   .dvc/plots/smooth.json</span>
+<span class="go">      new file:   .dvcignore</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><strong>Build the models, save them using DVC, and commit the new files to Git.</strong></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m home_assistant build</span>
+<span class="go">python -m home_assistant dvc --save</span>
+<span class="go">git commit -m &quot;Track models with dvc&quot;</span>
+</pre></div>
+</div>
+<p>The save command creates a file (.generated.dvc) that tracks the trained models.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">On branch master</span>
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span>
+
+<span class="go">      new file:   home_assistant/.generated.dvc</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><strong>Add new training data and follow the same commands in Step 4.</strong></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> New training data and/or intents added
+<span class="go">python -m home_assistant build -i</span>
+<span class="go">python -m home_assistant dvc --save</span>
+<span class="go">git commit -m &quot;Updated models with new training data&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><strong>Switch between different trained models and repo states using the 'checkout' flag.</strong></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> Use git log to get the git commit <span class="nb">hash</span> you want to checkout
+<span class="go">python -m home_assistant dvc --checkout [HASH]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../integrations/webex_teams.html" class="btn btn-neutral float-right" title="Webex Teams Integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="voice.html" class="btn btn-neutral float-left" title="Dealing with Voice Inputs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Cisco Systems
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

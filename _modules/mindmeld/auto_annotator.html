@@ -1,0 +1,1045 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138982267-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-138982267-1');
+  </script>
+
+  <title>mindmeld.auto_annotator &mdash; The Conversational AI Playbook 4.3.1 documentation</title>
+  
+
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'4.3.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/custom.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> The Conversational AI Playbook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.3.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/introduction_to_conversational_applications.html">Introduction to Conversational Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/approaches_for_building_conversational_applications.html">Different Approaches for Building Conversational Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/anatomy_of_a_conversational_ai_interaction.html">Anatomy of a Conversational AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/introducing_mindmeld.html">Introducing MindMeld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/key_concepts.html">Key Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Step-by-Step Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/00_overview.html">Building a Conversational Interface in 10 Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/01_select_the_right_use_case.html">Step 1: Select the Right Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/02_script_interactions.html">Step 2: Script Your Ideal Dialogue Interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/03_define_the_hierarchy.html">Step 3: Define the Domain, Intent, Entity, and Role Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/04_define_the_dialogue_handlers.html">Step 4: Define the Dialogue State Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/05_create_the_knowledge_base.html">Step 5: Create the Knowledge Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/06_generate_representative_training_data.html">Step 6: Generate Representative Training Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/07_train_the_natural_language_processing_classifiers.html">Step 7: Train the Natural Language Processing Classifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/08_configure_the_language_parser.html">Step 8: Configure the Language Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/09_optimize_question_answering_performance.html">Step 9: Optimize Question Answering Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/10_deploy_to_production.html">Step 10: Deploy Trained Models</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Blueprint Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../blueprints/overview.html">MindMeld Blueprints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blueprints/food_ordering.html">Food Ordering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blueprints/video_discovery.html">Video Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blueprints/home_assistant.html">Home Assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blueprints/hr_assistant.html">HR Assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blueprints/banking.html">Banking Assistant</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/architecture.html">Platform Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/optional_dependency.html">Managing Optional Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/preprocessor.html">Working with the Preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/nlp.html">Working with the Natural Language Processor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/domain_classifier.html">Working with the Domain Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/intent_classifier.html">Working with the Intent Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/entity_recognizer.html">Working with the Entity Recognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/lstm.html">Using LSTM for Entity Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/role_classifier.html">Working with the Role Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/entity_resolver.html">Working with the Entity Resolver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/parser.html">Working with the Language Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/custom_features.html">Working with User-Defined Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/kb.html">Working with the Knowledge Base and Question Answerer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/dm.html">Working with the Dialogue Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/auto_annotator.html">Working with the Auto Annotator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/custom_action.html">Working with Custom Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/tokenizer.html">Working with the Tokenizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/internationalization.html">Internationalization support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/voice.html">Dealing with Voice Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userguide/dvc.html">DVC for Model Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integrations/webex_teams.html">Webex Teams Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../integrations/whatsapp.html">WhatsApp Integration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../internal/api_reference.html">API Reference</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MindMeld UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../mindmeld_ui/mindmeld_ui.html">MindMeld UI</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Versions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../versions/changes.html">Recent Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../versions/history.html">Package History</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">The Conversational AI Playbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>mindmeld.auto_annotator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for mindmeld.auto_annotator</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (c) 2015 Cisco Systems, Inc. and others.  All rights reserved.</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
+
+
+<span class="kn">from</span> <span class="nn">.resource_loader</span> <span class="kn">import</span> <span class="n">ResourceLoader</span>
+<span class="kn">from</span> <span class="nn">.components._config</span> <span class="kn">import</span> <span class="n">get_auto_annotator_config</span>
+<span class="kn">from</span> <span class="nn">.system_entity_recognizer</span> <span class="kn">import</span> <span class="n">DucklingRecognizer</span>
+<span class="kn">from</span> <span class="nn">.markup</span> <span class="kn">import</span> <span class="n">load_query</span><span class="p">,</span> <span class="n">dump_queries</span>
+<span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">Entity</span><span class="p">,</span> <span class="n">Span</span><span class="p">,</span> <span class="n">QueryEntity</span>
+<span class="kn">from</span> <span class="nn">.query_factory</span> <span class="kn">import</span> <span class="n">QueryFactory</span>
+<span class="kn">from</span> <span class="nn">.exceptions</span> <span class="kn">import</span> <span class="n">MarkupError</span>
+<span class="kn">from</span> <span class="nn">.models.helpers</span> <span class="kn">import</span> <span class="n">register_annotator</span>
+<span class="kn">from</span> <span class="nn">.constants</span> <span class="kn">import</span> <span class="n">SPACY_ANNOTATOR_SUPPORTED_ENTITIES</span><span class="p">,</span> <span class="n">CURRENCY_SYMBOLS</span><span class="p">,</span> <span class="n">_no_overlap</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">EN_CORE_WEB_SM</span> <span class="o">=</span> <span class="s2">&quot;en_core_web_sm&quot;</span>
+<span class="n">EN_CORE_WEB_MD</span> <span class="o">=</span> <span class="s2">&quot;en_core_web_md&quot;</span>
+<span class="n">EN_CORE_WEB_LG</span> <span class="o">=</span> <span class="s2">&quot;en_core_web_lg&quot;</span>
+
+
+<div class="viewcode-block" id="AnnotatorAction"><a class="viewcode-back" href="../../apidoc/mindmeld.auto_annotator.html#mindmeld.auto_annotator.AnnotatorAction">[docs]</a><span class="k">class</span> <span class="nc">AnnotatorAction</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">ANNOTATE</span> <span class="o">=</span> <span class="s2">&quot;annotate&quot;</span>
+    <span class="n">UNANNOTATE</span> <span class="o">=</span> <span class="s2">&quot;unannotate&quot;</span></div>
+
+
+<div class="viewcode-block" id="Annotator"><a class="viewcode-back" href="../../apidoc/mindmeld.auto_annotator.html#mindmeld.auto_annotator.Annotator">[docs]</a><span class="k">class</span> <span class="nc">Annotator</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract Annotator class that can be used to build a custom Annotation class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_path</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Initializes an annotator.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            app_path (str): The location of the MindMeld app</span>
+<span class="sd">            config (dict, optional): A config object to use. This will</span>
+<span class="sd">                override the config specified by the app&#39;s config.py file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app_path</span> <span class="o">=</span> <span class="n">app_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span> <span class="ow">or</span> <span class="n">get_auto_annotator_config</span><span class="p">(</span><span class="n">app_path</span><span class="o">=</span><span class="n">app_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resource_loader</span> <span class="o">=</span> <span class="n">ResourceLoader</span><span class="o">.</span><span class="n">create_resource_loader</span><span class="p">(</span><span class="n">app_path</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_file_entities_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">AnnotatorAction</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Creates a dictionary that maps file paths to entities given</span>
+<span class="sd">        regex rules defined in the config.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            action (AnnotatorAction): Can be &quot;annotate&quot; or &quot;unannotate&quot;. Used as a key</span>
+<span class="sd">                to access a list of regex rules in the config dictionary.</span>
+<span class="sd">            config (dict): Config to use instead of the class config.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            file_entities_map (dict): A dictionary that maps file paths in an</span>
+<span class="sd">                App to a list of entities.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">config</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
+        <span class="n">all_file_paths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resource_loader</span><span class="o">.</span><span class="n">get_all_file_paths</span><span class="p">()</span>
+        <span class="n">file_entities_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">path</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">all_file_paths</span><span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="n">AnnotatorAction</span><span class="o">.</span><span class="n">ANNOTATE</span><span class="p">:</span>
+            <span class="n">rules</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="n">AnnotatorAction</span><span class="o">.</span><span class="n">ANNOTATE</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="n">AnnotatorAction</span><span class="o">.</span><span class="n">UNANNOTATE</span><span class="p">:</span>
+            <span class="n">rules</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="n">AnnotatorAction</span><span class="o">.</span><span class="n">UNANNOTATE</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">rules</span><span class="p">:</span>
+            <span class="n">pattern</span> <span class="o">=</span> <span class="n">Annotator</span><span class="o">.</span><span class="n">_get_pattern</span><span class="p">(</span><span class="n">rule</span><span class="p">)</span>
+            <span class="n">compiled_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+            <span class="n">filtered_paths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resource_loader</span><span class="o">.</span><span class="n">filter_file_paths</span><span class="p">(</span>
+                <span class="n">compiled_pattern</span><span class="o">=</span><span class="n">compiled_pattern</span><span class="p">,</span> <span class="n">file_paths</span><span class="o">=</span><span class="n">all_file_paths</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">filtered_paths</span><span class="p">:</span>
+                <span class="n">entities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_entities</span><span class="p">(</span><span class="n">rule</span><span class="p">)</span>
+                <span class="n">file_entities_map</span><span class="p">[</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="n">entities</span>
+        <span class="k">return</span> <span class="n">file_entities_map</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_pattern</span><span class="p">(</span><span class="n">rule</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Convert a rule represented as a dictionary with the keys &quot;domains&quot;, &quot;intents&quot;,</span>
+<span class="sd">        &quot;entities&quot; into a regex pattern.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            rule (dict): Annotation/Unannotation rule.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pattern (str): Regex pattern specifying allowed file paths.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pattern</span> <span class="o">=</span> <span class="p">[</span><span class="n">rule</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;domains&quot;</span><span class="p">,</span> <span class="s2">&quot;intents&quot;</span><span class="p">,</span> <span class="s2">&quot;files&quot;</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="s2">&quot;.*/&quot;</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_entities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rule</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Process the entities specified in a rule dictionary. Check if they are valid</span>
+<span class="sd">        for the given annotator.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            rule (dict): Annotation/Unannotation rule with an &quot;entities&quot; key.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            valid_entities (list): List of valid entities specified in the rule.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">rule</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span> <span class="s2">&quot;.+&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[()]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">rule</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+        <span class="n">valid_entities</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">entities</span><span class="p">:</span>
+            <span class="n">entity</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_entity_check</span><span class="p">(</span><span class="n">entity</span><span class="p">):</span>
+                <span class="n">valid_entities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is not a valid entity. Skipping entity.&quot;</span><span class="p">,</span> <span class="n">entity</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">valid_entities</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">supported_entity_types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            supported_entity_types (list): List of supported entity types.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Subclasses must implement this method&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Annotator.valid_entity_check"><a class="viewcode-back" href="../../apidoc/mindmeld.auto_annotator.html#mindmeld.auto_annotator.Annotator.valid_entity_check">[docs]</a>    <span class="k">def</span> <span class="nf">valid_entity_check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Determine if an entity type is valid.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entity (str): Name of entity to annotate.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: Whether entity is valid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">entity</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">entity</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">supported_entity_types</span></div>
+
+<div class="viewcode-block" id="Annotator.annotate"><a class="viewcode-back" href="../../apidoc/mindmeld.auto_annotator.html#mindmeld.auto_annotator.Annotator.annotate">[docs]</a>    <span class="k">def</span> <span class="nf">annotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Annotate data based on configurations in the config.py file.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            kwargs (dict, optional): Configuration overrides can be passed in as arguments.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">config</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;annotate&quot;</span><span class="p">]:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sd">&quot;&quot;&quot;&#39;annotate&#39; field is not configured or misconfigured in the `config.py`.</span>
+<span class="sd">                 We can&#39;t find any file to annotate.&quot;&quot;&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">file_entities_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_entities_map</span><span class="p">(</span>
+            <span class="n">action</span><span class="o">=</span><span class="n">AnnotatorAction</span><span class="o">.</span><span class="n">ANNOTATE</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_modify_queries</span><span class="p">(</span>
+            <span class="n">file_entities_map</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">AnnotatorAction</span><span class="o">.</span><span class="n">ANNOTATE</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Annotator.unannotate"><a class="viewcode-back" href="../../apidoc/mindmeld.auto_annotator.html#mindmeld.auto_annotator.Annotator.unannotate">[docs]</a>    <span class="k">def</span> <span class="nf">unannotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Unannotate data based on configurations in the config.py file.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            kwargs (dict, optional): Configuration overrides can be passed in as arguments.</span>
+<span class="sd">            unannotate_all (bool): Unannotate all entities.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;unannotate_all&quot;</span> <span class="ow">and</span> <span class="n">value</span><span class="p">:</span>
+                <span class="n">config</span><span class="p">[</span><span class="s2">&quot;unannotate&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;domains&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span> <span class="s2">&quot;intents&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span> <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span> <span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,}</span>
+                <span class="p">]</span>
+                <span class="n">config</span><span class="p">[</span><span class="s2">&quot;unannotate_supported_entities_only&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">config</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;unannotate&quot;</span><span class="p">]:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sd">&quot;&quot;&quot;&#39;unannotate&#39; field is not configured or misconfigured in the `config.py`.</span>
+<span class="sd">                 We can&#39;t find any file to unannotate.&quot;&quot;&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">file_entities_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_file_entities_map</span><span class="p">(</span>
+            <span class="n">action</span><span class="o">=</span><span class="n">AnnotatorAction</span><span class="o">.</span><span class="n">UNANNOTATE</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_modify_queries</span><span class="p">(</span>
+            <span class="n">file_entities_map</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">AnnotatorAction</span><span class="o">.</span><span class="n">UNANNOTATE</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span>
+        <span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_modify_queries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_entities_map</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="n">AnnotatorAction</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Iterates through App files and annotates or unannotates queries.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_entities_map (dict): A dictionary that maps a file paths</span>
+<span class="sd">                in an App to a list of entities.</span>
+<span class="sd">            action (AnnotatorAction): Can be &quot;annotate&quot; or &quot;unannotate&quot;.</span>
+<span class="sd">            config (dict): Config to use instead of the class config.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query_factory</span> <span class="o">=</span> <span class="n">QueryFactory</span><span class="o">.</span><span class="n">create_query_factory</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">app_path</span><span class="p">)</span>
+        <span class="n">path_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">file_entities_map</span> <span class="k">if</span> <span class="n">file_entities_map</span><span class="p">[</span><span class="n">p</span><span class="p">]]</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">path_list</span><span class="p">:</span>
+            <span class="n">processed_queries</span> <span class="o">=</span> <span class="n">Annotator</span><span class="o">.</span><span class="n">_get_processed_queries</span><span class="p">(</span>
+                <span class="n">file_path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">query_factory</span><span class="o">=</span><span class="n">query_factory</span>
+            <span class="p">)</span>
+            <span class="n">tqdm_desc</span> <span class="o">=</span> <span class="s2">&quot;Processing &quot;</span> <span class="o">+</span> <span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span>
+            <span class="k">for</span> <span class="n">processed_query</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">processed_queries</span><span class="p">,</span> <span class="n">ascii</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">tqdm_desc</span><span class="p">):</span>
+                <span class="n">entity_types</span> <span class="o">=</span> <span class="n">file_entities_map</span><span class="p">[</span><span class="n">path</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="n">AnnotatorAction</span><span class="o">.</span><span class="n">ANNOTATE</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_annotate_query</span><span class="p">(</span>
+                        <span class="n">processed_query</span><span class="o">=</span><span class="n">processed_query</span><span class="p">,</span>
+                        <span class="n">entity_types</span><span class="o">=</span><span class="n">entity_types</span><span class="p">,</span>
+                        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="n">AnnotatorAction</span><span class="o">.</span><span class="n">UNANNOTATE</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_unannotate_query</span><span class="p">(</span>
+                        <span class="n">processed_query</span><span class="o">=</span><span class="n">processed_query</span><span class="p">,</span>
+                        <span class="n">remove_entities</span><span class="o">=</span><span class="n">entity_types</span><span class="p">,</span>
+                        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+                    <span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+                <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dump_queries</span><span class="p">(</span><span class="n">processed_queries</span><span class="p">))))</span>
+                <span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_processed_queries</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">query_factory</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Converts queries in a given path to processed queries.</span>
+<span class="sd">        Skips and presents a warning if loading the query creates an error.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_path (str): Path to file containing queries.</span>
+<span class="sd">            query_factory (QueryFactory): Used to generate processed queries.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            processed_queries (list): List of processed queries from file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+            <span class="n">queries</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="n">processed_queries</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">processed_query</span> <span class="o">=</span> <span class="n">load_query</span><span class="p">(</span><span class="n">markup</span><span class="o">=</span><span class="n">query</span><span class="p">,</span> <span class="n">query_factory</span><span class="o">=</span><span class="n">query_factory</span><span class="p">)</span>
+                <span class="n">processed_queries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">processed_query</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">AssertionError</span><span class="p">,</span> <span class="n">MarkupError</span><span class="p">):</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Skipping query. Error in processing: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">processed_queries</span>
+
+    <span class="k">def</span> <span class="nf">_annotate_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">processed_query</span><span class="p">,</span> <span class="n">entity_types</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Updates the entities of a processed query with newly</span>
+<span class="sd">        annotated entities.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            processed_query (ProcessedQuery): The processed query to update.</span>
+<span class="sd">            entity_types (list): List of entities allowed for annotation.</span>
+<span class="sd">            config (dict): Config to use instead of the class config.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">current_entities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">processed_query</span><span class="o">.</span><span class="n">entities</span><span class="p">)</span>
+        <span class="n">annotated_entities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_annotated_entities</span><span class="p">(</span>
+            <span class="n">processed_query</span><span class="o">=</span><span class="n">processed_query</span><span class="p">,</span> <span class="n">entity_types</span><span class="o">=</span><span class="n">entity_types</span>
+        <span class="p">)</span>
+        <span class="n">final_entities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_conflicts</span><span class="p">(</span>
+            <span class="n">current_entities</span><span class="o">=</span><span class="n">current_entities</span><span class="p">,</span>
+            <span class="n">annotated_entities</span><span class="o">=</span><span class="n">annotated_entities</span><span class="p">,</span>
+            <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">processed_query</span><span class="o">.</span><span class="n">entities</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">final_entities</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_annotated_entities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">processed_query</span><span class="p">,</span> <span class="n">entity_types</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Creates a list of query entities after parsing the text of a</span>
+<span class="sd">        processed query.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            processed_query (ProcessedQuery): A processed query.</span>
+<span class="sd">            entity_types (list): List of entities allowed for annotation.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            query_entities (list): List of query entities.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">entity_types</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">entity_types</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">entity_types</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="n">entity_types</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span>
+            <span class="n">sentence</span><span class="o">=</span><span class="n">processed_query</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">entity_types</span><span class="o">=</span><span class="n">entity_types</span>
+        <span class="p">)</span>
+        <span class="n">query_entities</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Annotator</span><span class="o">.</span><span class="n">_item_to_query_entity</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">processed_query</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="n">query_entities</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">query_entities</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">[]</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_item_to_query_entity</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">processed_query</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Converts an item returned from parse into a query entity.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            item (dict): Dictionary representing an entity with the keys -</span>
+<span class="sd">                &quot;body&quot;, &quot;start&quot;, &quot;end&quot;, &quot;value&quot;, &quot;dim&quot;.</span>
+<span class="sd">            processed_query (ProcessedQuery): The processed query that the</span>
+<span class="sd">                entity is found in.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            query_entity (QueryEntity): The converted query entity.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">span</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">entity</span> <span class="o">=</span> <span class="n">Entity</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">],</span> <span class="n">entity_type</span><span class="o">=</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">],</span> <span class="n">value</span><span class="o">=</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
+        <span class="n">query_entity</span> <span class="o">=</span> <span class="n">QueryEntity</span><span class="o">.</span><span class="n">from_query</span><span class="p">(</span>
+            <span class="n">query</span><span class="o">=</span><span class="n">processed_query</span><span class="o">.</span><span class="n">query</span><span class="p">,</span> <span class="n">span</span><span class="o">=</span><span class="n">span</span><span class="p">,</span> <span class="n">entity</span><span class="o">=</span><span class="n">entity</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">query_entity</span>
+
+    <span class="k">def</span> <span class="nf">_resolve_conflicts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_entities</span><span class="p">,</span> <span class="n">annotated_entities</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Resolve overlaps between existing entities and newly annotad entities.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            current_entities (list): List of existing query entities.</span>
+<span class="sd">            annotated_entities (list): List of new query entities.</span>
+<span class="sd">            config (dict): Config to use instead of the class config.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            final_entities (list): List of resolved query entities.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">config</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
+        <span class="n">overwrite</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;overwrite&quot;</span><span class="p">]</span>
+        <span class="n">base_entities</span> <span class="o">=</span> <span class="n">annotated_entities</span> <span class="k">if</span> <span class="n">overwrite</span> <span class="k">else</span> <span class="n">current_entities</span>
+        <span class="n">other_entities</span> <span class="o">=</span> <span class="n">current_entities</span> <span class="k">if</span> <span class="n">overwrite</span> <span class="k">else</span> <span class="n">annotated_entities</span>
+
+        <span class="n">additional_entities</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">o_entity</span> <span class="ow">in</span> <span class="n">other_entities</span><span class="p">:</span>
+            <span class="n">no_overlaps</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">_no_overlap</span><span class="p">(</span><span class="n">o_entity</span><span class="p">,</span> <span class="n">b_entity</span><span class="p">)</span> <span class="k">for</span> <span class="n">b_entity</span> <span class="ow">in</span> <span class="n">base_entities</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">no_overlaps</span><span class="p">):</span>
+                <span class="n">additional_entities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">o_entity</span><span class="p">)</span>
+        <span class="n">base_entities</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">additional_entities</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">base_entities</span>
+
+    <span class="c1"># pylint: disable=R0201</span>
+    <span class="k">def</span> <span class="nf">_unannotate_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">processed_query</span><span class="p">,</span> <span class="n">remove_entities</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Removes specified entities in a processed query. If all entities are being</span>
+<span class="sd">        removed, this function will not remove entities that the annotator does not support</span>
+<span class="sd">        unless it is explicitly specified to do so in the config with the param</span>
+<span class="sd">        &quot;unannotate_supported_entities_only&quot; (boolean).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            processed_query (ProcessedQuery): A processed query.</span>
+<span class="sd">            remove_entities (list): List of entities to remove.</span>
+<span class="sd">            config (dict): Config to use instead of the class config.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">config</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
+        <span class="n">remove_supported_only</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;unannotate_supported_entities_only&quot;</span><span class="p">]</span>
+        <span class="n">keep_entities</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">query_entity</span> <span class="ow">in</span> <span class="n">processed_query</span><span class="o">.</span><span class="n">entities</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">remove_entities</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">]:</span>
+                <span class="n">is_supported_entity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_entity_check</span><span class="p">(</span><span class="n">query_entity</span><span class="o">.</span><span class="n">entity</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">remove_supported_only</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_supported_entity</span><span class="p">:</span>
+                    <span class="n">keep_entities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">query_entity</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">query_entity</span><span class="o">.</span><span class="n">entity</span><span class="o">.</span><span class="n">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">remove_entities</span><span class="p">:</span>
+                <span class="n">keep_entities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">query_entity</span><span class="p">)</span>
+        <span class="n">processed_query</span><span class="o">.</span><span class="n">entities</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">keep_entities</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Annotator.parse"><a class="viewcode-back" href="../../apidoc/mindmeld.auto_annotator.html#mindmeld.auto_annotator.Annotator.parse">[docs]</a>    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sentence</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Extract entities from a sentence. Detected entities should be</span>
+<span class="sd">        represented as dictionaries with the following keys: &quot;body&quot;, &quot;start&quot;</span>
+<span class="sd">        (start index), &quot;end&quot; (end index), &quot;value&quot;, &quot;dim&quot; (entity type).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            sentence (str): Sentence to detect entities.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            entities (list): List of entity dictionaries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Subclasses must implement this method&quot;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="SpacyAnnotator"><a class="viewcode-back" href="../../apidoc/mindmeld.auto_annotator.html#mindmeld.auto_annotator.SpacyAnnotator">[docs]</a><span class="k">class</span> <span class="nc">SpacyAnnotator</span><span class="p">(</span><span class="n">Annotator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; (English) Annotator class that uses spacy to generate annotations.</span>
+<span class="sd">    Supported entities include: &quot;sys_time&quot;, &quot;sys_interval&quot;, &quot;sys_duration&quot;, &quot;sys_number&quot;,</span>
+<span class="sd">    &quot;sys_amount-of-money&quot;, &quot;sys_distance&quot;, &quot;sys_weight&quot;, &quot;sys_ordinal&quot;, &quot;sys_quantity&quot;,</span>
+<span class="sd">    &quot;sys_percent&quot;, &quot;sys_org&quot;, &quot;sys_loc&quot;, &quot;sys_person&quot;, &quot;sys_gpe&quot;, &quot;sys_norp&quot;, &quot;sys_fac&quot;,</span>
+<span class="sd">    &quot;sys_product&quot;, &quot;sys_event&quot;, &quot;sys_law&quot;, &quot;sys_langauge&quot;, &quot;sys_work-of-art&quot;, &quot;sys_other-quantity&quot;,</span>
+<span class="sd">    For more information on the supported entities for the Spacy Annotator check the MindMeld docs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_path</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Initializes an annotator.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            app_path (str): The location of the MindMeld app</span>
+<span class="sd">            config (dict, optional): A config object to use. This will</span>
+<span class="sd">                override the config specified by the app&#39;s config.py file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">app_path</span><span class="o">=</span><span class="n">app_path</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;spacy_model&quot;</span><span class="p">,</span> <span class="n">EN_CORE_WEB_LG</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nlp</span> <span class="o">=</span> <span class="n">SpacyAnnotator</span><span class="o">.</span><span class="n">_load_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">duckling</span> <span class="o">=</span> <span class="n">DucklingRecognizer</span><span class="o">.</span><span class="n">get_instance</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ANNOTATOR_TO_DUCKLING_ENTITY_MAPPINGS</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;money&quot;</span><span class="p">:</span> <span class="s2">&quot;sys_amount-of-money&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cardinal&quot;</span><span class="p">:</span> <span class="s2">&quot;sys_number&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ordinal&quot;</span><span class="p">:</span> <span class="s2">&quot;sys_ordinal&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;person&quot;</span><span class="p">:</span> <span class="s2">&quot;sys_person&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;percent&quot;</span><span class="p">:</span> <span class="s2">&quot;sys_percent&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;distance&quot;</span><span class="p">:</span> <span class="s2">&quot;sys_distance&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="s2">&quot;sys_weight&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_load_model</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Load Spacy English model. Download if needed.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model (str): Spacy model (&quot;en_core_web_sm&quot;, &quot;en_core_web_md&quot;, or</span>
+<span class="sd">                &quot;en_core_web_lg&quot;).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            nlp (spacy.lang.en.English): Spacy language model.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">model</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">EN_CORE_WEB_SM</span><span class="p">,</span> <span class="n">EN_CORE_WEB_MD</span><span class="p">,</span> <span class="n">EN_CORE_WEB_LG</span><span class="p">]:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is not an English model. The Auto Annotator is currently not&quot;</span>
+                <span class="s2">&quot; designed for non-English models but they can be used.&quot;</span><span class="p">,</span>
+                <span class="n">model</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading Spacy model </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> not found. Downloading the model.&quot;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;python -m spacy download &quot;</span> <span class="o">+</span> <span class="n">model</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">language_module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown Spacy model name: </span><span class="si">{!r}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">language_module</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">supported_entity_types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pylint: disable=W0236</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            supported_entity_types (list): List of supported entity types.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">SPACY_ANNOTATOR_SUPPORTED_ENTITIES</span>
+
+<div class="viewcode-block" id="SpacyAnnotator.parse"><a class="viewcode-back" href="../../apidoc/mindmeld.auto_annotator.html#mindmeld.auto_annotator.SpacyAnnotator.parse">[docs]</a>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sentence</span><span class="p">,</span> <span class="n">entity_types</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Extracts entities from a sentence. Detected entities should are</span>
+<span class="sd">        represented as dictionaries with the following keys: &quot;body&quot;, &quot;start&quot;</span>
+<span class="sd">        (start index), &quot;end&quot; (end index), &quot;value&quot;, &quot;dim&quot; (entity type).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            sentence (str): Sentence to detect entities.</span>
+<span class="sd">            entity_types (list): List of entity types to annotate. If None, all</span>
+<span class="sd">                possible entity types will be annotated.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            entities (list): List of entity dictionaries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">doc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nlp</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+        <span class="n">spacy_entities</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+                <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="n">ent</span><span class="o">.</span><span class="n">start_char</span><span class="p">,</span>
+                <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="n">ent</span><span class="o">.</span><span class="n">end_char</span><span class="p">,</span>
+                <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">},</span>
+                <span class="s2">&quot;dim&quot;</span><span class="p">:</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span>
+        <span class="p">]</span>
+
+        <span class="n">entity_resolution_func_map</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_time_date</span><span class="p">,</span>
+            <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_time_date</span><span class="p">,</span>
+            <span class="s2">&quot;cardinal&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_cardinal</span><span class="p">,</span>
+            <span class="s2">&quot;money&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_money</span><span class="p">,</span>
+            <span class="s2">&quot;ordinal&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_ordinal</span><span class="p">,</span>
+            <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_quantity</span><span class="p">,</span>
+            <span class="s2">&quot;percent&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_percent</span><span class="p">,</span>
+            <span class="s2">&quot;person&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_person</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">entities</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">spacy_entities</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">entity_resolution_func_map</span><span class="p">:</span>
+                <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;entity&quot;</span><span class="p">:</span> <span class="n">entity</span><span class="p">}</span>
+                <span class="k">if</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">]:</span>
+                    <span class="n">params</span><span class="p">[</span><span class="s2">&quot;entity_types&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">entity_types</span>
+                <span class="k">elif</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;money&quot;</span><span class="p">]:</span>
+                    <span class="n">params</span><span class="p">[</span><span class="s2">&quot;sentence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sentence</span>
+                <span class="n">entity</span> <span class="o">=</span> <span class="n">entity_resolution_func_map</span><span class="p">[</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]](</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sys_&quot;</span> <span class="o">+</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">entity</span><span class="p">:</span>
+                <span class="n">entities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">entity_types</span><span class="p">:</span>
+            <span class="n">entities</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entities</span> <span class="k">if</span> <span class="n">e</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">entity_types</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">entities</span></div>
+
+    <span class="k">def</span> <span class="nf">_resolve_time_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">,</span> <span class="n">entity_types</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Resolves a time related entity. First, an exact match is searched for. If</span>
+<span class="sd">        not found, the largest substring match is searched for. If the span of the entity</span>
+<span class="sd">        does not share the exact span match with duckling entities then it is likely that</span>
+<span class="sd">        spacy has recognized an additional word in the span. For example, &quot;nearly 15 minutes&quot;</span>
+<span class="sd">        doesn&#39;t have an exact match but the largest substring match correctly resolves for</span>
+<span class="sd">        the substring &quot;15 minutes&quot;. Order of priority for the time entities is sys_duration,</span>
+<span class="sd">        sys_interval, and sys_time.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entity (dict): A dictionary representing an entity.</span>
+<span class="sd">            entity_types (list): List of entity types to parse. If None, all possible</span>
+<span class="sd">                entity types will be parsed.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            entity (dict): A resolved entity dict or None if the entity isn&#39;t resolved.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">duckling</span><span class="o">.</span><span class="n">get_candidates_for_text</span><span class="p">(</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">time_entities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sys_duration&quot;</span><span class="p">,</span> <span class="s2">&quot;sys_interval&quot;</span><span class="p">,</span> <span class="s2">&quot;sys_time&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">entity_types</span><span class="p">:</span>
+            <span class="n">time_entities</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">time_entities</span> <span class="k">if</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entity_types</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">SpacyAnnotator</span><span class="o">.</span><span class="n">_resolve_time_exact_match</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">time_entities</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">entity</span>
+        <span class="k">elif</span> <span class="n">SpacyAnnotator</span><span class="o">.</span><span class="n">_resolve_largest_substring</span><span class="p">(</span>
+            <span class="n">entity</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">entity_types</span><span class="o">=</span><span class="n">time_entities</span><span class="p">,</span> <span class="n">is_time_related</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">):</span>
+            <span class="k">return</span> <span class="n">entity</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_time_entity_type</span><span class="p">(</span><span class="n">candidate</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Determine the &quot;sys&quot; type given a time-related Duckling candidate dictionary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            candidate (dict): A Duckling candidate.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            entity_type (str): Entity type. (&quot;sys_duration&quot;, &quot;sys_interval&quot; or &quot;sys_time&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;duration&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;sys_duration&quot;</span>
+        <span class="k">if</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;time&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">][</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;interval&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;sys_interval&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;sys_time&quot;</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_resolve_time_exact_match</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">time_entities</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Resolve a time-related entity given Duckling candidates on the first</span>
+<span class="sd">        exact match.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entity (dict): A dictionary representing an entity.</span>
+<span class="sd">            candidates (list): List of dictionary candidates returned by Duckling.parse().</span>
+<span class="sd">            time_entities (list): List of allowed time-related entity types.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            entity (dict): A resolved entity dict or None if the entity isn&#39;t resolved.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+            <span class="n">candidate_entity</span> <span class="o">=</span> <span class="n">SpacyAnnotator</span><span class="o">.</span><span class="n">_get_time_entity_type</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">candidate_entity</span> <span class="ow">in</span> <span class="n">time_entities</span>
+                <span class="ow">and</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span>
+            <span class="p">):</span>
+                <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidate_entity</span>
+                <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+                <span class="k">return</span> <span class="n">entity</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_resolve_largest_substring</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">entity_types</span><span class="p">,</span> <span class="n">is_time_related</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Resolve an entity by the largest substring match given Duckling candidates.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entity (dict): A dictionary representing an entity.</span>
+<span class="sd">            candidates (list): List of dictionary candidates returned by Duckling.parse().</span>
+<span class="sd">            entity_types (list): List of entity types to check.</span>
+<span class="sd">            is_time_related (bool): Whether the entity is related to time.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            entity (dict): A resolved entity dict or None if the entity isn&#39;t resolved.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">largest_candidate</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">resolved_entity_type</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">entity_type</span> <span class="ow">in</span> <span class="n">entity_types</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">is_time_related</span><span class="p">:</span>
+                    <span class="n">candidate_entity</span> <span class="o">=</span> <span class="n">SpacyAnnotator</span><span class="o">.</span><span class="n">_get_time_entity_type</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">candidate_entity</span> <span class="o">=</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;entity_type&quot;</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="n">candidate_entity</span> <span class="o">==</span> <span class="n">entity_type</span>
+                    <span class="ow">and</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span>
+                    <span class="ow">and</span> <span class="p">(</span>
+                        <span class="n">largest_candidate</span> <span class="ow">is</span> <span class="kc">None</span>
+                        <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">largest_candidate</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">])</span>
+                    <span class="p">)</span>
+                <span class="p">):</span>
+                    <span class="n">largest_candidate</span> <span class="o">=</span> <span class="n">candidate</span>
+                    <span class="n">resolved_entity_type</span> <span class="o">=</span> <span class="n">entity_type</span>
+
+        <span class="k">if</span> <span class="n">largest_candidate</span><span class="p">:</span>
+            <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">largest_candidate</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">]</span>
+            <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">largest_candidate</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">]</span>
+            <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">largest_candidate</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">]</span>
+            <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">largest_candidate</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+            <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">resolved_entity_type</span>
+            <span class="k">return</span> <span class="n">entity</span>
+
+    <span class="k">def</span> <span class="nf">_resolve_cardinal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_exact_match</span><span class="p">(</span><span class="n">entity</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">entity</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">duckling</span><span class="o">.</span><span class="n">get_candidates_for_text</span><span class="p">(</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_largest_substring</span><span class="p">(</span>
+            <span class="n">entity</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">entity_types</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sys_number&quot;</span><span class="p">],</span> <span class="n">is_time_related</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">):</span>
+            <span class="k">return</span> <span class="n">entity</span>
+
+    <span class="k">def</span> <span class="nf">_resolve_money</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">,</span> <span class="n">sentence</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">CURRENCY_SYMBOLS</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">:</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">sentence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">symbol</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+                    <span class="n">start</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">sentence</span><span class="p">[</span><span class="n">start</span> <span class="o">-</span> <span class="mi">2</span> <span class="p">:</span> <span class="n">start</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">symbol</span>
+                <span class="p">):</span>
+                    <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+                    <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sentence</span><span class="p">[</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">]</span> <span class="p">:</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">]]</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_exact_match</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_resolve_ordinal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_exact_match</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_resolve_exact_match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Resolves an entity by exact match and corresponding type.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entity (dict): A dictionary representing an entity.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            entity (dict): A resolved entity dict or None if the entity isn&#39;t resolved.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ANNOTATOR_TO_DUCKLING_ENTITY_MAPPINGS</span><span class="p">[</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]]</span>
+
+        <span class="n">candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">duckling</span><span class="o">.</span><span class="n">get_candidates_for_text</span><span class="p">(</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;entity_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span>
+                <span class="ow">and</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span>
+            <span class="p">):</span>
+                <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+                <span class="k">return</span> <span class="n">entity</span>
+
+    <span class="k">def</span> <span class="nf">_resolve_quantity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Resolves a quantity related entity. First looks for an exact match, then</span>
+<span class="sd">        for the largest substring match. Order of priority is &quot;sys_distance&quot; then &quot;sys_quantity&quot;.</span>
+<span class="sd">        Unresolved entities are labelled as &quot;sys_other-quantity&quot;</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entity (dict): A dictionary representing an entity.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            entity (dict): A resolved entity dict or None if the entity isn&#39;t resolved.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">duckling</span><span class="o">.</span><span class="n">get_candidates_for_text</span><span class="p">(</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sys_other-quantity&quot;</span>
+            <span class="k">return</span> <span class="n">entity</span>
+
+        <span class="n">entity_types</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">entity_type</span> <span class="ow">in</span> <span class="n">entity_types</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">entity_type</span>
+                    <span class="ow">and</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span>
+                <span class="p">):</span>
+                    <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+                    <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ANNOTATOR_TO_DUCKLING_ENTITY_MAPPINGS</span><span class="p">[</span>
+                        <span class="n">entity_type</span>
+                    <span class="p">]</span>
+                    <span class="k">return</span> <span class="n">entity</span>
+
+        <span class="k">if</span> <span class="n">SpacyAnnotator</span><span class="o">.</span><span class="n">_resolve_largest_substring</span><span class="p">(</span>
+            <span class="n">entity</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">entity_types</span><span class="o">=</span><span class="n">entity_types</span><span class="p">,</span> <span class="n">is_time_related</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">):</span>
+            <span class="k">return</span> <span class="n">entity</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sys_other-quantity&quot;</span>
+            <span class="k">return</span> <span class="n">entity</span>
+
+    <span class="k">def</span> <span class="nf">_resolve_percent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Resolves an entity related to percentage. Uses a heuristic of finding</span>
+<span class="sd">        the largest candidate value and dividing by 100. If the candidate value is</span>
+<span class="sd">        a float, the float value divided by 100 is immediately returned.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entity (dict): A dictionary representing an entity.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            entity (dict): A resolved entity dict or None if the entity isn&#39;t resolved.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ANNOTATOR_TO_DUCKLING_ENTITY_MAPPINGS</span><span class="p">[</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]]</span>
+
+        <span class="n">candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">duckling</span><span class="o">.</span><span class="n">get_candidates_for_text</span><span class="p">(</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">possible_values</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;entity_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;sys_number&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">candidate</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+                    <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span> <span class="o">/</span> <span class="mi">100</span>
+                    <span class="k">return</span> <span class="n">entity</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">possible_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">possible_values</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span>
+        <span class="k">return</span> <span class="n">entity</span>
+
+    <span class="k">def</span> <span class="nf">_resolve_person</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Resolves a person entity by unlabelling a possessive &quot;&#39;s&quot; from the</span>
+<span class="sd">        name if it exists.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entity (dict): A dictionary representing an entity.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            entity (dict): A resolved entity dict.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ANNOTATOR_TO_DUCKLING_ENTITY_MAPPINGS</span><span class="p">[</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;dim&quot;</span><span class="p">]]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;&#39;s&quot;</span><span class="p">:</span>
+            <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">][:</span><span class="o">-</span><span class="mi">2</span><span class="p">]}</span>
+            <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">][:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">entity</span></div>
+
+
+<span class="n">register_annotator</span><span class="p">(</span><span class="s2">&quot;SpacyAnnotator&quot;</span><span class="p">,</span> <span class="n">SpacyAnnotator</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Cisco Systems
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

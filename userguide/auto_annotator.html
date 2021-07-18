@@ -1,0 +1,775 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138982267-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-138982267-1');
+  </script>
+
+  <title>Working with the Auto Annotator &mdash; The Conversational AI Playbook 4.3.1 documentation</title>
+  
+
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'4.3.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/custom.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Working with Custom Actions" href="custom_action.html" />
+    <link rel="prev" title="Working with the Dialogue Manager" href="dm.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> The Conversational AI Playbook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.3.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/introduction_to_conversational_applications.html">Introduction to Conversational Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/approaches_for_building_conversational_applications.html">Different Approaches for Building Conversational Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/anatomy_of_a_conversational_ai_interaction.html">Anatomy of a Conversational AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/introducing_mindmeld.html">Introducing MindMeld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/key_concepts.html">Key Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Step-by-Step Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/00_overview.html">Building a Conversational Interface in 10 Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/01_select_the_right_use_case.html">Step 1: Select the Right Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/02_script_interactions.html">Step 2: Script Your Ideal Dialogue Interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/03_define_the_hierarchy.html">Step 3: Define the Domain, Intent, Entity, and Role Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/04_define_the_dialogue_handlers.html">Step 4: Define the Dialogue State Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/05_create_the_knowledge_base.html">Step 5: Create the Knowledge Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/06_generate_representative_training_data.html">Step 6: Generate Representative Training Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/07_train_the_natural_language_processing_classifiers.html">Step 7: Train the Natural Language Processing Classifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/08_configure_the_language_parser.html">Step 8: Configure the Language Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/09_optimize_question_answering_performance.html">Step 9: Optimize Question Answering Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/10_deploy_to_production.html">Step 10: Deploy Trained Models</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Blueprint Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/overview.html">MindMeld Blueprints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/food_ordering.html">Food Ordering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/video_discovery.html">Video Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/home_assistant.html">Home Assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/hr_assistant.html">HR Assistant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blueprints/banking.html">Banking Assistant</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Platform Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional_dependency.html">Managing Optional Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessor.html">Working with the Preprocessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp.html">Working with the Natural Language Processor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="domain_classifier.html">Working with the Domain Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intent_classifier.html">Working with the Intent Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entity_recognizer.html">Working with the Entity Recognizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lstm.html">Using LSTM for Entity Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="role_classifier.html">Working with the Role Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entity_resolver.html">Working with the Entity Resolver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parser.html">Working with the Language Parser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_features.html">Working with User-Defined Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kb.html">Working with the Knowledge Base and Question Answerer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dm.html">Working with the Dialogue Manager</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Working with the Auto Annotator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-auto-annotator">Using the Auto Annotator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#annotate">Annotate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unannotate">Unannotate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#default-auto-annotator-spacy-annotator">Default Auto Annotator: Spacy Annotator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#auto-annotator-configuration">Auto Annotator Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-custom-annotator">Creating a Custom Annotator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#custom-annotator-boilerplate-code">Custom Annotator Boilerplate Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-custom-parameters-from-the-config">Getting Custom Parameters from the Config</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="custom_action.html">Working with Custom Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tokenizer.html">Working with the Tokenizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internationalization.html">Internationalization support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice.html">Dealing with Voice Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dvc.html">DVC for Model Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/webex_teams.html">Webex Teams Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/whatsapp.html">WhatsApp Integration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../internal/api_reference.html">API Reference</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MindMeld UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mindmeld_ui/mindmeld_ui.html">MindMeld UI</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Versions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../versions/changes.html">Recent Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../versions/history.html">Package History</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">The Conversational AI Playbook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Working with the Auto Annotator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/userguide/auto_annotator.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="working-with-the-auto-annotator">
+<h1>Working with the Auto Annotator<a class="headerlink" href="#working-with-the-auto-annotator" title="Permalink to this headline">¶</a></h1>
+<p>The Auto Annotator</p>
+<blockquote>
+<div><ul class="simple">
+<li>is a tool to automatically annotate or unannotate select entities across all labelled data in an application.</li>
+<li>supports the development of custom Annotators.</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The examples in this section require the <a class="reference internal" href="../blueprints/hr_assistant.html"><span class="doc">HR Assistant</span></a> blueprint application. To get the app, open a terminal and run <code class="docutils literal notranslate"><span class="pre">mindmeld</span> <span class="pre">blueprint</span> <span class="pre">hr_assistant</span></code>.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Changes by an Auto Annotator cannot be undone and Mindmeld does not backup query data. We recommend using version control software such as Github.</p>
+</div>
+<div class="section" id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<p>This section briefly explains the use of the <code class="docutils literal notranslate"><span class="pre">annotate</span></code> and <code class="docutils literal notranslate"><span class="pre">unannotate</span></code> commands. For more details, please read the next section.</p>
+<p>Before annotating the data, we will first remove all existing annotations using <code class="docutils literal notranslate"><span class="pre">unannotate</span></code>. Be sure to include the <code class="xref py py-attr docutils literal notranslate"><span class="pre">--unannotate_all</span></code> flag when running the following command in the command-line.</p>
+<p>Command-line:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mindmeld unannotate --app-path &quot;hr_assistant&quot; --unannotate_all</span>
+</pre></div>
+</div>
+<p>We can now proceed to <code class="docutils literal notranslate"><span class="pre">annotate</span></code> our data using the command below.</p>
+<p>Command-line:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mindmeld annotate --app-path &quot;hr_assistant&quot;</span>
+</pre></div>
+</div>
+<p>The following section explains this same process in more detail.</p>
+</div>
+<div class="section" id="using-the-auto-annotator">
+<h2>Using the Auto Annotator<a class="headerlink" href="#using-the-auto-annotator" title="Permalink to this headline">¶</a></h2>
+<p>The Auto Annotator can be used by importing a class that implements the <code class="xref py py-class docutils literal notranslate"><span class="pre">Annotator</span></code> abstract class in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">auto_annotator</span></code> module or through the command-line.
+We will demonstrate both approaches for annotation and unannotation using the <code class="xref py py-class docutils literal notranslate"><span class="pre">SpacyAnnotator</span></code> class.</p>
+<div class="section" id="annotate">
+<h3>Annotate<a class="headerlink" href="#annotate" title="Permalink to this headline">¶</a></h3>
+<p>By default, all entity types supported by an Annotator will by annotated if they do not overlap with existing annotations.</p>
+<p>You can <code class="xref py py-attr docutils literal notranslate"><span class="pre">annotate</span></code> using the command-line.
+To overwrite existing annotations that overlap with new annotations, pass in the optional param <code class="xref py py-attr docutils literal notranslate"><span class="pre">--overwrite</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mindmeld annotate --app-path &quot;hr_assistant&quot; --overwrite</span>
+</pre></div>
+</div>
+<p>Alternatively, you can annotate by creating an instance of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Annotator</span></code> class and running the Python code below.
+An optional param <code class="xref py py-attr docutils literal notranslate"><span class="pre">overwrite</span></code> can be passed in here as well.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mindmeld.auto_annotator</span> <span class="kn">import</span> <span class="n">SpacyAnnotator</span>
+<span class="n">sa</span> <span class="o">=</span> <span class="n">SpacyAnnotator</span><span class="p">(</span><span class="n">app_path</span><span class="o">=</span><span class="s2">&quot;hr_assistant&quot;</span><span class="p">)</span>
+
+<span class="n">sa</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you do not want to annotate all supported entities, you can specify annotation rules instead.</p>
+<p>For example, let's annotate <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys_person</span></code> entities from the <code class="xref py py-attr docutils literal notranslate"><span class="pre">get_hierarchy_up</span></code> intent in the <code class="xref py py-attr docutils literal notranslate"><span class="pre">hierarchy</span></code> domain.
+To do this, we can add the following <code class="xref py py-attr docutils literal notranslate"><span class="pre">AUTO_ANNOTATOR_CONFIG</span></code> dictionary to <code class="xref py py-attr docutils literal notranslate"><span class="pre">config.py</span></code>.
+Notice that we are setting <code class="xref py py-attr docutils literal notranslate"><span class="pre">overwrite</span></code> to True since we want to replace the existing custom entity label, <code class="xref py py-attr docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">AUTO_ANNOTATOR_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+
+        <span class="s2">&quot;annotator_class&quot;</span><span class="p">:</span> <span class="s2">&quot;SpacyAnnotator&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;annotate&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                        <span class="s2">&quot;domains&quot;</span><span class="p">:</span> <span class="s2">&quot;hierarchy&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;intents&quot;</span><span class="p">:</span> <span class="s2">&quot;get_hierarchy_up&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;train.txt&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="s2">&quot;sys_person&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;unannotate_supported_entities_only&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;unannotate&quot;</span><span class="p">:</span> <span class="kc">None</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Before running the annotation, let's take a look at the first four queries in the train.txt file for the <code class="xref py py-attr docutils literal notranslate"><span class="pre">get_hierarchy_up</span></code> intent:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>I wanna get a list of all of the employees that are currently {manage|manager} {caroline|name}
+I wanna know {Tayana Jeannite|name}&#39;s person in {leadership|manager} of her?
+is it correct to say that {Angela|name} is a {boss|manager}?
+who all is {management|manager} of {tayana|name}
+</pre></div>
+</div>
+<p>After running <code class="xref py py-attr docutils literal notranslate"><span class="pre">annotate</span></code> we find that instances of <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys_person</span></code> have been labelled and have overwritten previous instances of the custom entity, <code class="xref py py-attr docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>I wanna get a list of all of the employees that are currently {manage|manager} {caroline|sys_person}
+I wanna know {Tayana Jeannite|sys_person}&#39;s person in {leadership|manager} of her?
+is it correct to say that {Angela|sys_person} is a {boss|manager}?
+who all is {management|manager} of {tayana|sys_person}
+</pre></div>
+</div>
+<p>You can annotate with multiple annotation rules. For more details on annotation rules please read the &quot;Auto Annotator Configuration&quot; section below.</p>
+</div>
+<div class="section" id="unannotate">
+<h3>Unannotate<a class="headerlink" href="#unannotate" title="Permalink to this headline">¶</a></h3>
+<p>By default, only the entities that are supported by an Annotator will be unannotated.</p>
+<p>You can <code class="xref py py-attr docutils literal notranslate"><span class="pre">unannotate</span></code> using the command-line. To unannotate all entities, pass in the optional param <code class="xref py py-attr docutils literal notranslate"><span class="pre">--unannotate_all</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mindmeld unannotate --app-path &quot;hr_assistant&quot; --unannotate_all</span>
+</pre></div>
+</div>
+<p>To unannotate by creating an instance of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Annotator</span></code> class, run the Python code below.
+To unannotate all annotations, pass in the optional param <code class="xref py py-attr docutils literal notranslate"><span class="pre">unannotate_all</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mindmeld.auto_annotator</span> <span class="kn">import</span> <span class="n">SpacyAnnotator</span>
+<span class="n">sa</span> <span class="o">=</span> <span class="n">SpacyAnnotator</span><span class="p">(</span><span class="n">app_path</span><span class="o">=</span><span class="s2">&quot;hr_assistant&quot;</span><span class="p">)</span>
+
+<span class="n">sa</span><span class="o">.</span><span class="n">unannotate</span><span class="p">(</span><span class="n">unannotate_all</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">unannotate_all</span></code> is not set to True and you see the following message, you need to update the unannotate parameter in your custom <code class="xref py py-attr docutils literal notranslate"><span class="pre">AUTO_ANNOTATOR_CONFIG</span></code> dictionary in <code class="xref py py-attr docutils literal notranslate"><span class="pre">config.py</span></code>.
+You can refer to the config specifications in the &quot;Auto Annotator Configuration&quot; section below.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&#39;unannotate&#39; field is not configured or misconfigured in the `config.py`. We can&#39;t find any file to unannotate.</span>
+</pre></div>
+</div>
+<p>If you do not want to unannotate all entities, you can can specify annotation rules to be used for unannotation in the <code class="xref py py-attr docutils literal notranslate"><span class="pre">unannotate</span></code> param of your config.
+For example, let's unannotate <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys_time</span></code> entities from the <code class="xref py py-attr docutils literal notranslate"><span class="pre">get_date_range_aggregate</span></code> intent in the <code class="xref py py-attr docutils literal notranslate"><span class="pre">date</span></code> domain.
+To do this, we can add the following <code class="xref py py-attr docutils literal notranslate"><span class="pre">AUTO_ANNOTATOR_CONFIG</span></code> dictionary to <code class="xref py py-attr docutils literal notranslate"><span class="pre">config.py</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">AUTO_ANNOTATOR_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+
+        <span class="s2">&quot;annotator_class&quot;</span><span class="p">:</span> <span class="s2">&quot;SpacyAnnotator&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;annotate&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;domains&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span> <span class="s2">&quot;intents&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span> <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span> <span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;unannotate_supported_entities_only&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;unannotate&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                        <span class="s2">&quot;domains&quot;</span><span class="p">:</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;intents&quot;</span><span class="p">:</span> <span class="s2">&quot;get_date_range_aggregate&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;train.txt&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="s2">&quot;sys_time&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
+        <span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The content of <code class="xref py py-attr docutils literal notranslate"><span class="pre">annotate</span></code> in the config has no effect on unannotation. Similarly, <code class="xref py py-attr docutils literal notranslate"><span class="pre">unannotate</span></code> in the config has no affect on annotation. These processes are independent and are only affected by the corresponding parameter in the config.</p>
+</div>
+<p>Before running the unannotation, let's take a look at the first four queries in the train.txt file for the <code class="xref py py-attr docutils literal notranslate"><span class="pre">get_date_range_aggregate</span></code> intent:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{sum|function} of {non-citizen|citizendesc} people {hired|employment_action} {after|date_compare} {2005|sys_time}
+What {percentage|function} of employees were {born|dob} {before|date_compare} {1992|sys_time}?
+{us citizen|citizendesc} people with {birthday|dob} {before|date_compare} {1996|sys_time} {count|function}
+{count|function} of {eligible non citizen|citizendesc} workers {born|dob} {before|date_compare} {1994|sys_time}
+</pre></div>
+</div>
+<p>After running <code class="xref py py-attr docutils literal notranslate"><span class="pre">unannotate</span></code> we find that instances of <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys_time</span></code> have been unannotated as expected.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{sum|function} of {non-citizen|citizendesc} people {hired|employment_action} {after|date_compare} 2005
+What {percentage|function} of employees were {born|dob} {before|date_compare} 1992?
+{us citizen|citizendesc} people with {birthday|dob} {before|date_compare} 1996 {count|function}
+{count|function} of {eligible non citizen|citizendesc} workers {born|dob} {before|date_compare} 1994
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="default-auto-annotator-spacy-annotator">
+<h2>Default Auto Annotator: Spacy Annotator<a class="headerlink" href="#default-auto-annotator-spacy-annotator" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../apidoc/mindmeld.auto_annotator.html#module-mindmeld.auto_annotator" title="mindmeld.auto_annotator"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mindmeld.auto_annotator</span></code></a> module contains an abstract <code class="xref py py-class docutils literal notranslate"><span class="pre">Annotator</span></code> class.
+This class serves as a base class for any Mindmeld Annotator including the <code class="xref py py-class docutils literal notranslate"><span class="pre">SpacyAnnotator</span></code> class.
+The <code class="xref py py-class docutils literal notranslate"><span class="pre">SpacyAnnotator</span></code> leverages <a class="reference external" href="https://spacy.io/usage/linguistic-features#named-entities">Spacy's Named Entity Recognition</a> system to detect 21 different entities.
+Some of these entities are resolvable by Duckling.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="20%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Supported Entities</th>
+<th class="head">Resolvable by Duckling</th>
+<th class="head">Examples or Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&quot;sys_time&quot;</td>
+<td>Yes</td>
+<td>&quot;today&quot;, &quot;Tuesday, Feb 18&quot; , &quot;last week&quot;</td>
+</tr>
+<tr class="row-odd"><td>&quot;sys_interval&quot;</td>
+<td>Yes</td>
+<td>&quot;from 9:30 to 11:00am&quot;, &quot;Monday to Friday&quot;, &quot;Tuesday 3pm to Wednesday 7pm&quot;</td>
+</tr>
+<tr class="row-even"><td>&quot;sys_duration&quot;</td>
+<td>Yes</td>
+<td>&quot;2 hours&quot;, &quot;15 minutes&quot;, &quot;3 days&quot;</td>
+</tr>
+<tr class="row-odd"><td>&quot;sys_number&quot;</td>
+<td>Yes</td>
+<td>&quot;58&quot;, &quot;two hundred&quot;, &quot;1,394,345.45&quot;</td>
+</tr>
+<tr class="row-even"><td>&quot;sys_amount-of-money&quot;</td>
+<td>Yes</td>
+<td>&quot;ten dollars&quot;, &quot;seventy-eight euros&quot;, &quot;$58.67&quot;</td>
+</tr>
+<tr class="row-odd"><td>&quot;sys_distance&quot;</td>
+<td>Yes</td>
+<td>&quot;500 meters&quot;, &quot;498 miles&quot;, &quot;47.5 inches&quot;</td>
+</tr>
+<tr class="row-even"><td>&quot;sys_weight&quot;</td>
+<td>Yes</td>
+<td>&quot;400 pound&quot;, &quot;3 grams&quot;, &quot;47.5 mg&quot;</td>
+</tr>
+<tr class="row-odd"><td>&quot;sys_ordinal&quot;</td>
+<td>Yes</td>
+<td>&quot;3rd place&quot; (&quot;3rd&quot;), &quot;fourth street&quot; (&quot;fourth&quot;),  &quot;5th&quot;</td>
+</tr>
+<tr class="row-even"><td>&quot;sys_percent&quot;</td>
+<td>Yes</td>
+<td>&quot;four percent&quot;, &quot;12%&quot;, &quot;5 percent&quot;</td>
+</tr>
+<tr class="row-odd"><td>&quot;sys_org&quot;</td>
+<td>No</td>
+<td>&quot;Cisco&quot;, &quot;IBM&quot;, &quot;Google&quot;</td>
+</tr>
+<tr class="row-even"><td>&quot;sys_loc&quot;</td>
+<td>No</td>
+<td>&quot;Europe&quot;, &quot;Asia&quot;, &quot;the Alps&quot;, &quot;Pacific ocean&quot;</td>
+</tr>
+<tr class="row-odd"><td>&quot;sys_person&quot;</td>
+<td>No</td>
+<td>&quot;Blake Smith&quot;, &quot;Julia&quot;, &quot;Andy Neff&quot;</td>
+</tr>
+<tr class="row-even"><td>&quot;sys_gpe&quot;</td>
+<td>No</td>
+<td>&quot;California&quot;, &quot;FL&quot;, &quot;New York City&quot;, &quot;USA&quot;</td>
+</tr>
+<tr class="row-odd"><td>&quot;sys_norp&quot;</td>
+<td>No</td>
+<td>Nationalities or religious or political groups.</td>
+</tr>
+<tr class="row-even"><td>&quot;sys_fac&quot;</td>
+<td>No</td>
+<td>Buildings, airports, highways, bridges, etc.</td>
+</tr>
+<tr class="row-odd"><td>&quot;sys_product&quot;</td>
+<td>No</td>
+<td>Objects, vehicles, foods, etc. (Not services.)</td>
+</tr>
+<tr class="row-even"><td>&quot;sys_event&quot;</td>
+<td>No</td>
+<td>Named hurricanes, battles, wars, sports events, etc.</td>
+</tr>
+<tr class="row-odd"><td>&quot;sys_law&quot;</td>
+<td>No</td>
+<td>Named documents made into laws.</td>
+</tr>
+<tr class="row-even"><td>&quot;sys_language&quot;</td>
+<td>No</td>
+<td>Any named language.</td>
+</tr>
+<tr class="row-odd"><td>&quot;sys_work-of-art&quot;</td>
+<td>No</td>
+<td>Titles of books, songs, etc.</td>
+</tr>
+<tr class="row-even"><td>&quot;sys_other-quantity&quot;</td>
+<td>No</td>
+<td>&quot;10 joules&quot;, &quot;30 liters&quot;, &quot;15 tons&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>To detect entities in a single sentence first create an instance of the <code class="xref py py-class docutils literal notranslate"><span class="pre">SpacyAnnotator</span></code> class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mindmeld.auto_annotator</span> <span class="kn">import</span> <span class="n">SpacyAnnotator</span>
+<span class="n">sa</span> <span class="o">=</span> <span class="n">SpacyAnnotator</span><span class="p">(</span><span class="n">app_path</span><span class="o">=</span><span class="s2">&quot;hr_assistant&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">parse()</span></code> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sa</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;Apple stock went up $10 last monday.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Three entities are automatically recognized and a list of dictionaries is returned. Each dictionary represents a detected entity.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+        <span class="p">{</span>
+                <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;Apple&#39;</span><span class="p">},</span>
+                <span class="s1">&#39;dim&#39;</span><span class="p">:</span> <span class="s1">&#39;sys_org&#39;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+                <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;$10&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+                <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;unit&#39;</span><span class="p">:</span> <span class="s1">&#39;$&#39;</span><span class="p">},</span>
+                <span class="s1">&#39;dim&#39;</span><span class="p">:</span> <span class="s1">&#39;sys_amount-of-money&#39;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+                <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="s1">&#39;last monday&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+                <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span>
+                <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;2020-09-21T00:00:00.000-07:00&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;grain&#39;</span><span class="p">:</span> <span class="s1">&#39;day&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">},</span>
+                <span class="s1">&#39;dim&#39;</span><span class="p">:</span> <span class="s1">&#39;sys_time&#39;</span>
+        <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>The Auto Annotator detected &quot;Apple&quot; as <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys_org</span></code>. Moreover, it recognized &quot;$10&quot; as <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys_amount-of-money</span></code> and resolved its <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> as 10 and <code class="xref py py-attr docutils literal notranslate"><span class="pre">unit</span></code> as &quot;$&quot;.
+Lastly, it recognized &quot;last monday&quot; as <code class="xref py py-attr docutils literal notranslate"><span class="pre">sys_time</span></code> and resolved its <code class="xref py py-attr docutils literal notranslate"><span class="pre">value</span></code> to be a timestamp representing the last monday from the current date.</p>
+<p>In general, detected entities will be represented in the following format:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">entity</span> <span class="o">=</span> <span class="p">{</span>
+
+        <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">substring</span> <span class="n">of</span> <span class="n">sentence</span><span class="p">),</span>
+        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">start</span> <span class="n">index</span><span class="p">),</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">end</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s2">&quot;dim&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">entity</span> <span class="nb">type</span><span class="p">),</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">resolved</span> <span class="n">value</span><span class="p">,</span> <span class="k">if</span> <span class="n">it</span> <span class="n">exists</span><span class="p">),</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To restrict the types of entities returned from the <code class="xref py py-attr docutils literal notranslate"><span class="pre">parse()</span></code> method use the <code class="xref py py-attr docutils literal notranslate"><span class="pre">entity_types</span></code> parameter and pass in a list of entities to restrict parsing to. By default, all entities are allowed.
+For example, we can restrict the output of the previous example by doing the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">allowed_entites</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sys_org&quot;</span><span class="p">,</span> <span class="s2">&quot;sys_amount-of-money&quot;</span><span class="p">,</span> <span class="s2">&quot;sys_time&quot;</span><span class="p">]</span>
+<span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;Apple stock went up $10 last monday.&quot;</span>
+<span class="n">sa</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">sentence</span><span class="o">=</span><span class="n">sentence</span><span class="p">,</span> <span class="n">entity_types</span><span class="o">=</span><span class="n">allowed_entities</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="auto-annotator-configuration">
+<h2>Auto Annotator Configuration<a class="headerlink" href="#auto-annotator-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="xref py py-attr docutils literal notranslate"><span class="pre">DEFAULT_AUTO_ANNOTATOR_CONFIG</span></code> shown below is the default config for an Annotator.
+A custom config can be included in <code class="xref py py-attr docutils literal notranslate"><span class="pre">config.py</span></code> by duplicating the default config and renaming it to <code class="xref py py-attr docutils literal notranslate"><span class="pre">AUTO_ANNOTATOR_CONFIG</span></code>.
+Alternatively, a custom config dictionary can be passed in directly to <code class="xref py py-class docutils literal notranslate"><span class="pre">SpacyAnnotator</span></code> or any Annotator class upon instantiation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DEFAULT_AUTO_ANNOTATOR_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+
+        <span class="s2">&quot;annotator_class&quot;</span><span class="p">:</span> <span class="s2">&quot;SpacyAnnotator&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;annotate&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                        <span class="s2">&quot;domains&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;intents&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;unannotate_supported_entities_only&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;unannotate&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Let's take a look at the allowed values for each setting in an Auto Annotator configuration.</p>
+<p><code class="docutils literal notranslate"><span class="pre">'annotator_class'</span></code> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>): The class in auto_annotator.py to use for annotation when invoked from the command line. By default, <code class="xref py py-class docutils literal notranslate"><span class="pre">SpacyAnnotator</span></code> is used.</p>
+<p><code class="docutils literal notranslate"><span class="pre">'overwrite'</span></code> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>): Whether new annotations should overwrite existing annotations in the case of a span conflict. False by default.</p>
+<p><code class="docutils literal notranslate"><span class="pre">'annotate'</span></code> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>): A list of annotation rules where each rule is represented as a dictionary. Each rule must have four keys: <code class="xref py py-attr docutils literal notranslate"><span class="pre">domains</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">intents</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">files</span></code>, and <code class="xref py py-attr docutils literal notranslate"><span class="pre">entities</span></code>.
+Annotation rules are combined internally to create Regex patterns to match selected files. The character <code class="xref py py-attr docutils literal notranslate"><span class="pre">'.*'</span></code> can be used if all possibilities in a section are to be selected, while possibilities within
+a section are expressed with the usual Regex special characters, such as <code class="xref py py-attr docutils literal notranslate"><span class="pre">'.'</span></code> for any single character and <code class="xref py py-attr docutils literal notranslate"><span class="pre">'|'</span></code> to represent &quot;or&quot;.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;domains&quot;</span><span class="p">:</span> <span class="s2">&quot;(faq|salary)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;intents&quot;</span><span class="p">:</span> <span class="s2">&quot;.*&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;(train.txt|test.txt)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;entities&quot;</span><span class="p">:</span> <span class="s2">&quot;(sys_amount-of-money|sys_time)&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The rule above would annotate all text files named &quot;train&quot; or &quot;test&quot; in the &quot;faq&quot; and &quot;salary&quot; domains. Only sys_amount-of-money and sys_time entities would be annotated.
+Internally, the above rule is combined to a single pattern: &quot;(faq|salary)/.*/(train.txt|test.txt)&quot; and this pattern is matched against all file paths in the domain folder of your Mindmeld application.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The order of the annotation rules matters. Each rule overwrites the list of entities to annotate for a file if the two rules include the same file. It is good practice to start with more generic rules first and then have more specific rules.
+Be sure to use the regex &quot;or&quot; (<code class="xref py py-attr docutils literal notranslate"><span class="pre">|</span></code>) if applying rules at the same level of specificity. Otherwise, if written as separate rules, the latter will overwrite the former.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">By default, all files in all intents across all domains will be annotated with all supported entities. Before annotating consider including custom annotation rules in <code class="xref py py-attr docutils literal notranslate"><span class="pre">config.py</span></code>.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">'unannotate_supported_entities_only'</span></code> (<code class="xref py py-class docutils literal notranslate"><span class="pre">boolean</span></code>): By default, when the unannotate command is used only entities that the Annotator can annotate will be eligible for removal.</p>
+<p><code class="docutils literal notranslate"><span class="pre">'unannotate'</span></code> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>): List of annotation rules in the same format as those used for annotation. These rules specify which entities should have their annotations removed. By default, <code class="xref py py-attr docutils literal notranslate"><span class="pre">files</span></code> is None.</p>
+<p><code class="docutils literal notranslate"><span class="pre">'spacy_model'</span></code> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>): <code class="xref py py-attr docutils literal notranslate"><span class="pre">en_core_web_lg</span></code> is used by default for the best performance. Alternative options are <code class="xref py py-attr docutils literal notranslate"><span class="pre">en_core_web_sm</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">en_core_web_md</span></code>. This parameter is optional and is specific to the use of the <code class="xref py py-class docutils literal notranslate"><span class="pre">SpacyAnnotator</span></code>.
+If the selected model is not in the current environment it will automatically be downloaded. Refer to Spacy's documentation to learn more about their <a class="reference external" href="https://spacy.io/models/en">English models</a>. The Spacy Annotator is currently not designed to support other language but they may be used.</p>
+</div>
+<div class="section" id="creating-a-custom-annotator">
+<h2>Creating a Custom Annotator<a class="headerlink" href="#creating-a-custom-annotator" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">SpacyAnnotator</span></code> is a subclass of the abstract base class <code class="xref py py-class docutils literal notranslate"><span class="pre">Annotator</span></code>.
+The functionality for annotating and unannotating files is contained in <code class="xref py py-class docutils literal notranslate"><span class="pre">Annotator</span></code> itself.
+A developer simply needs to implement two methods to create a custom annotator.</p>
+<div class="section" id="custom-annotator-boilerplate-code">
+<h3>Custom Annotator Boilerplate Code<a class="headerlink" href="#custom-annotator-boilerplate-code" title="Permalink to this headline">¶</a></h3>
+<p>This section includes boilerplate code to build a <code class="xref py py-class docutils literal notranslate"><span class="pre">CustomAnnotator</span></code> class to which you can add to your own python file, let's call it <code class="xref py py-attr docutils literal notranslate"><span class="pre">custom_annotator.py</span></code>
+There are two &quot;TODO&quot;s. To implement a <code class="xref py py-class docutils literal notranslate"><span class="pre">CustomAnnotator</span></code> class a developer has to implement the <code class="xref py py-meth docutils literal notranslate"><span class="pre">parse()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">supported_entity_types()</span></code> methods.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomAnnotator</span><span class="p">(</span><span class="n">Annotator</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Custom Annotator class used to generate annotations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app_path</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+                <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">app_path</span><span class="o">=</span><span class="n">app_path</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+
+                <span class="c1"># Add additional attributes if needed</span>
+
+        <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sentence</span><span class="p">,</span> <span class="n">entity_types</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Args:</span>
+<span class="sd">                        sentence (str): Sentence to detect entities.</span>
+<span class="sd">                        entity_types (list): List of entity types to parse. If None, all</span>
+<span class="sd">                                possible entity types will be parsed.</span>
+<span class="sd">                Returns: entities (list): List of entity dictionaries.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+
+                <span class="c1"># TODO: Add custom parse logic</span>
+
+                <span class="k">return</span> <span class="n">entities</span>
+
+        <span class="nd">@property</span>
+        <span class="k">def</span> <span class="nf">supported_entity_types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Returns:</span>
+<span class="sd">                        supported_entity_types (list): List of supported entity types.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+
+                <span class="c1"># TODO: Add the entities supported by CustomAnnotator to supported_entities (list)</span>
+
+                <span class="n">supported_entities</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">return</span> <span class="n">supported_entities</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+        <span class="n">custom_annotator</span> <span class="o">=</span> <span class="n">CustomAnnotator</span><span class="p">(</span><span class="n">app_path</span><span class="o">=</span><span class="s2">&quot;hr_assistant&quot;</span><span class="p">)</span>
+        <span class="n">custom_annotator</span><span class="o">.</span><span class="n">annotate</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Entities returned by <code class="xref py py-attr docutils literal notranslate"><span class="pre">parse()</span></code> must have the following format:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">entity</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">substring</span> <span class="n">of</span> <span class="n">sentence</span><span class="p">),</span>
+        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">start</span> <span class="n">index</span><span class="p">),</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">end</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s2">&quot;dim&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">entity</span> <span class="nb">type</span><span class="p">),</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">resolved</span> <span class="n">value</span><span class="p">,</span> <span class="k">if</span> <span class="n">it</span> <span class="n">exists</span><span class="p">),</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To run your custom Annotator, simply run in the command line: <code class="xref py py-attr docutils literal notranslate"><span class="pre">python</span> <span class="pre">custom_annotator.py</span></code>.
+To run unannotation with your custom Annotator, change the last line in your script to <code class="xref py py-attr docutils literal notranslate"><span class="pre">custom_annotator.unannotate()</span></code>.</p>
+</div>
+<div class="section" id="getting-custom-parameters-from-the-config">
+<h3>Getting Custom Parameters from the Config<a class="headerlink" href="#getting-custom-parameters-from-the-config" title="Permalink to this headline">¶</a></h3>
+<p><code class="xref py py-attr docutils literal notranslate"><span class="pre">spacy_model</span></code> is an example of an optional parameter in the config that is relevant only for a specific <code class="xref py py-class docutils literal notranslate"><span class="pre">Annotator</span></code> class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">AUTO_ANNOTATOR_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="o">...</span>
+        <span class="s2">&quot;spacy_model&quot;</span><span class="p">:</span> <span class="s2">&quot;en_core_web_md&quot;</span><span class="p">,</span>
+        <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">SpacyAnnotator</span></code> checks if <code class="xref py py-attr docutils literal notranslate"><span class="pre">spacy_model</span></code> exists in the config, and if it doesn't, it will use the default value of &quot;en_core_web_lg&quot;.</p>
+<p>Custom parameters for custom annotators can be implemented in a similar fashion.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="custom_action.html" class="btn btn-neutral float-right" title="Working with Custom Actions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dm.html" class="btn btn-neutral float-left" title="Working with the Dialogue Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Cisco Systems
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
