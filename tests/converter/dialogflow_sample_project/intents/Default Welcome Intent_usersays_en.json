@@ -1,0 +1,86 @@
+[
+  {
+    "id": "4a2b2561-baa6-4e6e-baa1-3950677452d0",
+    "data": [
+      {
+        "text": "whatsup",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "f4867324-19d0-40a2-9649-7e0deeceb7e8",
+    "data": [
+      {
+        "text": "yo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "58138bd2-2cac-4433-9aed-987c59aa32e9",
+    "data": [
+      {
+        "text": "welcome",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c69cb4c8-8e5f-4094-b347-e1e52f35ac11",
+    "data": [
+      {
+        "text": "hi",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "50ca24fd-73a3-443c-a42e-11a0798c45ec",
+    "data": [
+      {
+        "text": "hello",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "6ca0e5f9-7b92-41e5-8aad-39efb551a537",
+    "data": [
+      {
+        "text": "hey",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "eb2c2865-791d-48c9-8fbb-f33a54aa4fa4",
+    "data": [
+      {
+        "text": "what\u0027s up",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]
