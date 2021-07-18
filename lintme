@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+FLAKE8_OPTIONS=""
+
+if [ "$MM_EXTRAS" == "true" ]; then
+  PYLINT_OPTIONS=""
+else
+  PYLINT_OPTIONS="--ignore mindmeld/bot"
+fi
+
+black --check .
+
+flake8 mindmeld tests $FLAKE8_OPTIONS
+pylint mindmeld $PYLINT_OPTIONS
